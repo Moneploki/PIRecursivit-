@@ -153,8 +153,13 @@ class Arbre {
 	 * @return true si l'élément est présent, false sinon
 	 */
 	boolean contient(int element) {
-		// à compléter/modifier
-		return false;
+		if(this.estVide())
+			return false;
+		if(this.estFeuille())
+			return this.element == element;
+		else
+			return this.getFilsGauche().contient(element) || this.getFilsDroit().contient(element) ;
+			
 	}
 
 	/**
